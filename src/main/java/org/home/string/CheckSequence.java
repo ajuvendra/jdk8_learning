@@ -22,14 +22,23 @@ package org.home.string;
 public class CheckSequence {
 	public static void main(String[] args) {
 		String str = "engineers rock";
-		String pattern = "er";
+		String pattern = "egr";
 		System.out.println(checkOrder(str, pattern));
 	}
 
 	private static boolean checkOrder(String str, String pattern) {
-		boolean result = false;
-		
-		return result;
+		char chars[] = str.toCharArray();
+		int ptrlen = 0;
+		for (char c : chars) {
+			if(c == pattern.charAt(ptrlen)) {
+				ptrlen++;
+			}
+			
+			if(ptrlen == pattern.length()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	
